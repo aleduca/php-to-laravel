@@ -1,7 +1,14 @@
 {
     "name": "xande/php-to-laravel",
     "require-dev": {
-        "symfony/var-dumper": "^7.1"
+        "symfony/var-dumper": "^7.1",
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload":{
+        "psr-4": {
+            "app\\": "app/",
+            "core\\": "core/"
+        }
     },
     "authors": [
         {
@@ -10,6 +17,6 @@
         }
     ],
     "require": {
-        "fakerphp/faker": "^1.23"
+        "vlucas/phpdotenv": "^5.6"
     }
 }
