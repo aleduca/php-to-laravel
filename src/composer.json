@@ -8,7 +8,11 @@
         "psr-4": {
             "app\\": "app/",
             "core\\": "core/"
-        }
+        },
+        "files": [
+            "core/helpers/constants.php",
+            "core/helpers/functions.php"
+        ]
     },
     "authors": [
         {
