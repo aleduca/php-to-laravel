@@ -7,7 +7,8 @@ class HomeController
   public function index()
   {
     view('home', [
-      'title' => 'Home Page'
+      'title' => 'Home Page',
+      'name' => 'Alexandre'
     ]);
   }
 }
