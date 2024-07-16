@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
+use core\library\Response;
+
 class HomeController
 {
-  public function index()
+  public function index(): Response
   {
-    view('home', [
+    return view('home', [
       'title' => 'Home Page',
       'name' => 'Alexandre'
     ]);

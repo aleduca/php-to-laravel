@@ -14,6 +14,6 @@ class Plates implements TemplateInterface
   ) {
     $templates = new Engine($viewPath . '/plates');
 
-    echo $templates->render($view, $data);
+    return $templates->render($view, $data);
   }
 }

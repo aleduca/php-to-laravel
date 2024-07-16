@@ -15,7 +15,7 @@ class Layout
     string $view,
     array $data = [],
     string $viewPath = VIEW_PATH
-  ) {
+  ): Response {
     $template = resolve('engine');
 
     if (!class_exists($template)) {
@@ -27,6 +27,9 @@ class Layout
       throw new ClassNotFoundException("Template " . $template::class . " must implement TemplateInterface.");
     }
 
-    return $template->render($view, $data, $viewPath);
+    return response(
+      content: $template->render($view, $data, $viewPath),
+      headers: ['Content-Type' => 'text/html'],
+    );
   }
 }
