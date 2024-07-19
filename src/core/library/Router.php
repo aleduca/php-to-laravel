@@ -15,7 +15,8 @@ class Router
   protected array $parameters = [];
 
   public function __construct(
-    private Container $container
+    private Container $container,
+    private Request $request
   ) {
   }
 

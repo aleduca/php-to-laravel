@@ -5,7 +5,7 @@ use app\controllers\LoginController;
 use app\controllers\ProductController;
 use core\library\Router;
 
-$router = new Router($app->container);
+$router = $app->container->get(Router::class);
 $router->add('GET', '/', [HomeController::class, 'index']);
 $router->add('GET', '/product/([a-z\-]+)', [ProductController::class, 'show']);
 $router->add('GET', '/product/([a-z\-]+)/category/([a-z0-9]+)', [ProductController::class, 'show']);

@@ -2,7 +2,6 @@
 
 namespace core\library;
 
-use core\library\Container as LibraryContainer;
 use DI\Container;
 use DI\ContainerBuilder;
 use Dotenv\Dotenv;
@@ -30,6 +29,9 @@ class App
   public function withContainer()
   {
     $builder = new ContainerBuilder();
+    $builder->addDefinitions([
+      Request::class => Request::create()
+    ]);
     $this->container = $builder->build();
 
     return $this;

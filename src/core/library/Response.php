@@ -23,10 +23,12 @@ class Response
 
   public function send()
   {
-    http_response_code($this->status);
+    if (!headers_sent()) {
+      http_response_code($this->status);
 
-    foreach ($this->headers as $key => $header) {
-      header($key . ': ' . $header);
+      foreach ($this->headers as $key => $header) {
+        header($key . ': ' . $header);
+      }
     }
 
     echo $this->content;
