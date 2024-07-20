@@ -26,6 +26,13 @@ class App
     return $this;
   }
 
+  public function withMiddlewares(array $middlewares)
+  {
+    bind('middlewares', $middlewares);
+
+    return $this;
+  }
+
   public function withContainer()
   {
     $builder = new ContainerBuilder();

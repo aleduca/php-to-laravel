@@ -2,11 +2,13 @@
 
 namespace core\controllers;
 
+use core\library\Response;
+
 class ErrorController
 {
-  public function notFound()
+  public function notFound(): Response
   {
-    view('errors/404', [
+    return view('errors/404', [
       'title' => 'Page Not Found'
     ], VIEW_PATH_CORE);
   }
