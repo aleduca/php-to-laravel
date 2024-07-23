@@ -35,7 +35,7 @@ class Router
   public function middleware(
     string|array $middlewares
   ) {
-    if ($this->routes[REQUEST_METHOD]) {
+    if (isset($this->routes[REQUEST_METHOD])) {
       $this->routes[REQUEST_METHOD][array_key_last($this->routes[REQUEST_METHOD])][2] = $middlewares;
     }
   }

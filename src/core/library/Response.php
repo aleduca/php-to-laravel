@@ -21,14 +21,19 @@ class Response
     return $this;
   }
 
-  public function send()
-  {
+  public function send(
+    $return = false
+  ) {
     if (!headers_sent()) {
       http_response_code($this->status);
 
       foreach ($this->headers as $key => $header) {
         header($key . ': ' . $header);
       }
+    }
+
+    if ($return) {
+      return $this->content;
     }
 
     echo $this->content;
