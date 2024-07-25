@@ -20,6 +20,10 @@ class Container
       return null;
     }
 
+    if (is_callable(static::$container[$key])) {
+      return static::$container[$key]();
+    }
+
     return static::$container[$key];
   }
 }

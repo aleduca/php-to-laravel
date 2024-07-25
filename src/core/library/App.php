@@ -7,6 +7,9 @@ use DI\ContainerBuilder;
 use Dotenv\Dotenv;
 use Spatie\Ignition\Ignition;
 
+use function DI\create;
+use function DI\factory;
+
 class App
 {
   public readonly Container $container;
@@ -33,11 +36,11 @@ class App
     return $this;
   }
 
-  public function withContainer()
+  public function withDependencyInjectionContainer()
   {
     $builder = new ContainerBuilder();
     $builder->addDefinitions([
-      Request::class => Request::create()
+      Request::class => factory([Request::class, 'create']),
     ]);
     $this->container = $builder->build();
 
@@ -61,6 +64,15 @@ class App
   ) {
 
     bind('engine', $engine);
+
+    return $this;
+  }
+
+  public function withServiceContainer()
+  {
+    bind(Redirect::class, function () {
+      return new Redirect();
+    });
 
     return $this;
   }

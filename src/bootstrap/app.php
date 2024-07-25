@@ -1,7 +1,7 @@
 <?php
 
 use core\library\App;
-use core\middlewares\GlobalMiddleware;
+use core\library\Redirect;
 use core\templates\Plates;
 
 $app = App::create()
@@ -11,4 +11,5 @@ $app = App::create()
   //   GlobalMiddleware::class
   // ])
   ->withErrorPage()
-  ->withContainer();
+  ->withDependencyInjectionContainer()
+  ->withServiceContainer();
