@@ -5,6 +5,7 @@ use core\library\Redirect;
 use core\templates\Plates;
 
 $app = App::create()
+  ->withSession()
   ->withEnvironmentVariables()
   ->withTemplateEngine(Plates::class)
   // ->withMiddlewares([

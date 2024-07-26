@@ -2,21 +2,31 @@
 
 namespace core\library;
 
+use core\library\Session;
 use DI\Container;
 use DI\ContainerBuilder;
 use Dotenv\Dotenv;
-use Spatie\Ignition\Ignition;
 
 use function DI\create;
 use function DI\factory;
+use Spatie\Ignition\Ignition;
 
 class App
 {
   public readonly Container $container;
+  public readonly Session $session;
 
   public static function create(): self
   {
     return new self;
+  }
+
+  public function withSession()
+  {
+    $this->session = new Session();
+    $this->session->previousUrl();
+
+    return $this;
   }
 
   public function withErrorPage()
@@ -40,7 +50,10 @@ class App
   {
     $builder = new ContainerBuilder();
     $builder->addDefinitions([
-      Request::class => factory([Request::class, 'create']),
+      Request::class => factory([Request::class, 'create'])->parameter('session', $this->session),
+      Session::class => function () {
+        return $this->session;
+      }
     ]);
     $this->container = $builder->build();
 
@@ -72,6 +85,10 @@ class App
   {
     bind(Redirect::class, function () {
       return new Redirect();
+    });
+
+    bind(Session::class, function () {
+      return $this->session;
     });
 
     return $this;

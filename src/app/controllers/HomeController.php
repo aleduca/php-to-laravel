@@ -3,14 +3,14 @@
 namespace app\controllers;
 
 use core\library\Redirect;
+use core\library\Request;
 use core\library\Response;
+use core\library\Session;
 
 class HomeController
 {
   public function index(): Response
   {
-    // $redirect = resolve(Redirect::class);
-    // dd($redirect);
     return view('home', [
       'title' => 'Home Page',
       'name' => 'Alexandre'
