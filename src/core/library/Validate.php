@@ -47,7 +47,7 @@ class Validate
 
         $response = $rule->validate($field, $request, $params ?? '');
 
-        if ($response) {
+        if ($response instanceof Response) {
           $this->errors[$field] = $response->send(return: true);
           break;
         }

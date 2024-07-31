@@ -21,6 +21,19 @@ class Response
     return $this;
   }
 
+  public function with(
+    array $data,
+    ?Session $session = null
+  ) {
+    if ($session) {
+      $session->flash()->set($data);
+      return $this;
+    }
+
+    session()->flash()->set($data);
+    return $this;
+  }
+
   public function send(
     $return = false
   ) {

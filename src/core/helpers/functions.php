@@ -2,6 +2,7 @@
 
 use core\library\Container;
 use core\library\Layout;
+use core\library\Redirect;
 use core\library\Response;
 use core\library\Session;
 
@@ -23,6 +24,23 @@ function resolve(string $key)
 function session(): Session
 {
   return resolve(Session::class);
+}
+
+function redirect(string $to = ''): Response
+{
+  return resolve(Redirect::class)->to($to);
+}
+
+function back(): Response
+{
+  return resolve(Redirect::class)->back();
+}
+
+function flash(
+  string $key,
+  string $style = 'alert alert-danger'
+) {
+  return session()->flash()->get($key, $style);
 }
 
 function response(

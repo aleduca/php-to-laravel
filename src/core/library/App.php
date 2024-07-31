@@ -7,7 +7,6 @@ use DI\Container;
 use DI\ContainerBuilder;
 use Dotenv\Dotenv;
 
-use function DI\create;
 use function DI\factory;
 use Spatie\Ignition\Ignition;
 
@@ -51,6 +50,9 @@ class App
     $builder = new ContainerBuilder();
     $builder->addDefinitions([
       Request::class => factory([Request::class, 'create'])->parameter('session', $this->session),
+      Redirect::class => function () {
+        return new Redirect($this->session);
+      },
       Session::class => function () {
         return $this->session;
       }
@@ -84,7 +86,7 @@ class App
   public function withServiceContainer()
   {
     bind(Redirect::class, function () {
-      return new Redirect();
+      return new Redirect($this->session);
     });
 
     bind(Session::class, function () {

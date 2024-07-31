@@ -11,6 +11,7 @@ class Session
       [$key1, $key2] = explode('.', $key);
       return isset($_SESSION[$key1][$key2]);
     }
+
     return isset($_SESSION[$key]);
   }
 
@@ -43,6 +44,11 @@ class Session
     return $_SESSION;
   }
 
+  public function flash()
+  {
+    return new Flash($this);
+  }
+
   public function remove(
     string $key
   ): void {
@@ -59,5 +65,21 @@ class Session
 
   public function previousUrl()
   {
+    if (!$this->has('url')) {
+      $this->set('url.current', REQUEST_URI);
+      $this->set('url.last', REQUEST_URI);
+    }
+
+    if (REQUEST_URI === '/favicon.ico') {
+      return;
+    }
+
+    if ($this->get('url.current') === REQUEST_URI && REQUEST_METHOD === 'GET') {
+      return;
+    }
+
+    $this->set('url.last', $this->get('url.current'));
+
+    $this->set('url.current', REQUEST_URI);
   }
 }
