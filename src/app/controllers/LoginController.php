@@ -24,12 +24,8 @@ class LoginController
 
 
     if ($validated->hasErrors()) {
-      // dd($request->session->all());
-      // return back();
-      // dd($validated->errors());
       $request->session->flash()->set($validated->errors());
       return back();
-      // return back()->with($validated->errors());
     }
 
     die();
