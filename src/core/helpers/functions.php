@@ -6,9 +6,9 @@ use core\library\Redirect;
 use core\library\Response;
 use core\library\Session;
 
-function view($view, $data = [], $viewPath = VIEW_PATH): Response
+function view(string $view, array $data = [], string $viewPath = VIEW_PATH, int $status = 200): Response
 {
-  return Layout::render($view, $data, $viewPath);
+  return Layout::render($view, $data, $viewPath, $status);
 }
 
 function bind(string $key, mixed $value)
@@ -34,6 +34,29 @@ function redirect(string $to = ''): Response
 function back(): Response
 {
   return resolve(Redirect::class)->back();
+}
+
+function csrf(): string
+{
+  return session()->csrf()->get();
+}
+
+function configFile(string $key)
+{
+  $file = BASE_PATH . '/app/config/config.php';
+
+  if (!file_exists($file)) {
+    return [];
+  }
+
+  $configFile = require $file;
+
+  if (str_contains($key, '.')) {
+    [$index, $subIndex] = explode('.', $key);
+    return $configFile[$index][$subIndex];
+  }
+
+  return $configFile[$key];
 }
 
 function flash(

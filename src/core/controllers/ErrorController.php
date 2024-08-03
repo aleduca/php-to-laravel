@@ -8,8 +8,13 @@ class ErrorController
 {
   public function notFound(): Response
   {
-    return view('errors/404', [
-      'title' => 'Page Not Found'
-    ], VIEW_PATH_CORE);
+    return view(
+      'errors/404',
+      [
+        'title' => 'Page Not Found'
+      ],
+      VIEW_PATH_CORE,
+      404
+    );
   }
 }

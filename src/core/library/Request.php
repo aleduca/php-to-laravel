@@ -14,6 +14,7 @@ class Request
     public readonly array $cookies,
     public readonly array $headers,
   ) {
+    $this->session->csrf()->check($this);
   }
 
   public static function create(Session $session)
@@ -38,6 +39,10 @@ class Request
     string $name
   ): ?string {
     $httpMethod = strtolower($this->server['REQUEST_METHOD']);
+
+    if (!isset($this->$httpMethod[$name])) {
+      return null;
+    }
 
     if ($httpMethod) {
       return strip_tags($this->$httpMethod[$name]);

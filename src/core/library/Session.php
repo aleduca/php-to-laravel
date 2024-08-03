@@ -44,9 +44,14 @@ class Session
     return $_SESSION;
   }
 
-  public function flash()
+  public function flash(): Flash
   {
     return new Flash($this);
+  }
+
+  public function csrf(): Csrf
+  {
+    return new Csrf($this);
   }
 
   public function remove(

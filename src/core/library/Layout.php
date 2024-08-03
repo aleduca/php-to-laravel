@@ -3,18 +3,15 @@
 namespace core\library;
 
 use core\exceptions\ClassNotFoundException;
-use core\exceptions\ViewNotFoundException;
 use core\interfaces\TemplateInterface;
-use core\templates\Plates;
-use League\Plates\Engine;
-use MyContainer;
 
 class Layout
 {
   public static function render(
     string $view,
     array $data = [],
-    string $viewPath = VIEW_PATH
+    string $viewPath = VIEW_PATH,
+    int $status = 200
   ): Response {
     $template = resolve('engine');
 
@@ -30,6 +27,7 @@ class Layout
     return response(
       content: $template->render($view, $data, $viewPath),
       headers: ['Content-Type' => 'text/html'],
+      status: $status
     );
   }
 }
