@@ -4,6 +4,11 @@ namespace core\library;
 
 class Session
 {
+  public static function create(): self
+  {
+    return new self;
+  }
+
   public function has(
     string $key
   ): bool {

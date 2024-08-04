@@ -1,7 +1,7 @@
 <?php
 
 use core\library\App;
-use core\library\Redirect;
+use core\middlewares\GlobalMiddleware;
 use core\templates\Plates;
 
 $app = App::create()

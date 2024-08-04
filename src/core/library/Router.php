@@ -26,8 +26,11 @@ class Router
     string $uri,
     array $route
   ) {
-    $route[2] = [];
-    $this->routes[$method][$uri] = $route;
+    $this->routes[$method][$uri] = [
+      'controller' => $route[0],
+      'action' => $route[1],
+      'middlewares' => $route[2] ?? []
+    ];
 
     return $this;
   }
@@ -36,14 +39,20 @@ class Router
     string|array $middlewares
   ) {
     if (isset($this->routes[REQUEST_METHOD])) {
-      $this->routes[REQUEST_METHOD][array_key_last($this->routes[REQUEST_METHOD])][2] = $middlewares;
+      $this->routes[REQUEST_METHOD][array_key_last($this->routes[REQUEST_METHOD])]['middlewares'] = $middlewares;
     }
   }
 
   public function execute()
   {
+    $requestMethod = REQUEST_METHOD;
+
+    if ($this->request->get('_method')) {
+      $requestMethod = strtoupper($this->request->get('_method'));
+    }
+
     foreach ($this->routes as $request => $routes) {
-      if ($request === REQUEST_METHOD) {
+      if ($request === $requestMethod) {
         return $this->handleUri($routes);
       }
     }
@@ -54,13 +63,13 @@ class Router
     foreach ($routes as $uri => $route) {
 
       if ($uri === REQUEST_URI) {
-        [$this->controller, $this->action, $this->middlewares] = $route;
+        ['controller' => $this->controller, 'action' => $this->action, 'middlewares' => $this->middlewares] = $route;
         break;
       }
 
       $pattern = str_replace('/', '\/', trim($uri, '/'));
       if ($uri !== '/' && preg_match("/^$pattern$/", trim(REQUEST_URI, '/'), $this->parameters)) {
-        [$this->controller, $this->action, $this->middlewares] = $route;
+        ['controller' => $this->controller, 'action' => $this->action, 'middlewares' => $this->middlewares] = $route;
         unset($this->parameters[0]);
         break;
       }
@@ -117,6 +126,7 @@ class Router
 
   private function handleNotFound()
   {
-    return (new ErrorController)->notFound();
+    $response = (new ErrorController)->notFound();
+    $this->handleResponse($response);
   }
 }

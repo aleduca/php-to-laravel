@@ -22,7 +22,7 @@ class App
 
   public function withSession()
   {
-    $this->session = new Session();
+    $this->session = Session::create();
     $this->session->previousUrl();
 
     return $this;
