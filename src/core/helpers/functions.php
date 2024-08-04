@@ -66,7 +66,7 @@ function flash(
   return session()->flash()->get($key, $style);
 }
 
-function method(string $method)
+function method(string $method): string
 {
   return "<input type='hidden' name='_method' value='$method'>";
 }

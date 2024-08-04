@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use core\library\Request;
+
 class UserController
 {
   public function store()
@@ -9,8 +11,9 @@ class UserController
     dd('store');
   }
 
-  public function destroy(int $id)
+  public function destroy(int $id, Request $request)
   {
-    dd('deleted ' . $id);
+    dd($request->all());
+    // dd('deleted ' . $id);
   }
 }

@@ -58,6 +58,9 @@ class Request
     $data = [];
 
     foreach ($this->$httpMethod as $key => $value) {
+      if (in_array($key, ['_method', 'csrf'])) {
+        continue;
+      }
       $data[$key] = strip_tags($value);
     }
 
