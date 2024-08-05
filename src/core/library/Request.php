@@ -51,14 +51,23 @@ class Request
     return null;
   }
 
+  public function ajax()
+  {
+    return isset($this->headers['X-Requested-With']) && $this->headers['X-Requested-With'] == 'XMLHttpRequest';
+  }
+
   public function all(): array
   {
     $httpMethod = strtolower($this->server['REQUEST_METHOD']);
 
+    if (!in_array($httpMethod, ['GET', 'POST'])) {
+      return [];
+    }
+
     $data = [];
 
     foreach ($this->$httpMethod as $key => $value) {
-      if (in_array($key, ['_method', 'csrf'])) {
+      if (in_array($key, ['_method', '_csrf'])) {
         continue;
       }
       $data[$key] = strip_tags($value);

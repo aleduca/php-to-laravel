@@ -13,7 +13,10 @@ class UserController
 
   public function destroy(int $id, Request $request)
   {
-    dd($request->all());
-    // dd('deleted ' . $id);
+    // dd($request->all());
+    if ($request->ajax()) {
+      return response()->json(['message' => 'deleted ' . $id]);
+    }
+    dd('deleted ' . $id);
   }
 }

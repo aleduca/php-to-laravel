@@ -3,7 +3,6 @@
 <h2>Home</h2>
 
 <form action="/user/12" method="post">
-  <?= csrf() ?>
   <?= method('DELETE') ?>
   <input type="text" placeholder="Your email" name="email">
   <?= flash('email'); ?>

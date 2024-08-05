@@ -4,7 +4,7 @@ return [
   'csrf' => [
     'ignore' => [
       '/login',
-      '/user/[0-9]+'
+      // '/user/[0-9]+'
     ]
   ]
 ];
