@@ -29,7 +29,7 @@ class Router
     $this->routes[$method][$uri] = [
       'controller' => $route[0],
       'action' => $route[1],
-      'middlewares' => $route[2] ?? []
+      'middlewares' => []
     ];
 
     return $this;

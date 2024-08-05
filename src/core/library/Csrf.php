@@ -25,6 +25,7 @@ class Csrf
 
   private function regexIgnoredRoutes(): bool
   {
+    dump('excepts');
     $excepts = configFile('csrf.ignore');
     if (!empty($excepts)) {
       foreach ($excepts as $except) {
@@ -44,7 +45,7 @@ class Csrf
     if (REQUEST_METHOD !== 'GET') {
 
       // verificar se a rota esta liberada em uma lista
-      if ($this->regexIgnoredRoutes()) {
+      if (!$request->get('csrf') && $this->regexIgnoredRoutes()) {
         return;
       }
 

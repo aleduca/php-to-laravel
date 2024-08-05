@@ -4,7 +4,6 @@ use app\controllers\HomeController;
 use app\controllers\LoginController;
 use app\controllers\ProductController;
 use app\controllers\UserController;
-use app\middlewares\AuthMiddleware;
 use core\library\Router;
 
 $router = $app->container->get(Router::class);
