@@ -27,6 +27,7 @@
         "league/plates": "^3.5",
         "latte/latte": "^3.0",
         "smarty/smarty": "^5.3",
-        "twig/twig": "^3.10"
+        "twig/twig": "^3.10",
+        "doctrine/inflector": "^2.0"
     }
 }
