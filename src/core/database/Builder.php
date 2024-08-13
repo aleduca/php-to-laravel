@@ -6,19 +6,29 @@ use Doctrine\Inflector\InflectorFactory;
 
 class Builder
 {
+  use DBCrud;
+  /**
+   * @var string
+   */
   private string $table;
 
-  public static function getInstance(string $model)
+  /**
+   * @var Model
+   */
+  private Model $model;
+
+  public static function getInstance(Model $model)
   {
-    $newSelf = new self;
-    $newSelf->setTable($model);
+    $newSelf = new self();
+    $newSelf->model = $model;
+    $newSelf->setTable();
 
     return $newSelf;
   }
 
-  private function setTable(string $model): void
+  private function setTable(): void
   {
-    $reflect = new \ReflectionClass($model);
+    $reflect = new \ReflectionClass($this->model);
 
     if (!$reflect->hasProperty('table')) {
       $inflector = InflectorFactory::create()->build();
@@ -31,7 +41,7 @@ class Builder
       return;
     }
     $this->table = $reflect->getProperty('table')->getValue(
-      $reflect->newInstance()
+      $this->model
     );
   }
 
@@ -42,6 +52,16 @@ class Builder
     $this->table = $table;
 
     return $this;
+  }
+
+  public function save()
+  {
+    $attributes = $this->model->attributes();
+    if (!array_key_exists('id', $attributes)) {
+      $this->create($attributes);
+      return;
+    }
+    dd('update');
   }
 
   public function where(string $field, string $operator, string $value)

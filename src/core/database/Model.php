@@ -9,14 +9,34 @@ use BadMethodCallException;
  */
 abstract class Model
 {
-  public static function newQueryBuilder()
+  private array $attributes = [];
+
+  public function __set(
+    string $name,
+    mixed $value
+  ) {
+    $this->attributes[$name] = $value;
+  }
+
+  public function __get(
+    string $name
+  ) {
+    return $this->attributes[$name];
+  }
+
+  public function attributes()
   {
-    return Builder::getInstance(static::class);
+    return $this->attributes;
+  }
+
+  public static function newQueryBuilder(Model $model)
+  {
+    return Builder::getInstance($model);
   }
 
   public function __call(string $name, array $arguments)
   {
-    $queryBuilder = self::newQueryBuilder();
+    $queryBuilder = self::newQueryBuilder($this);
     if (!method_exists($queryBuilder, $name)) {
       throw new BadMethodCallException("Method {$name} does not exist in Builder class");
     }
