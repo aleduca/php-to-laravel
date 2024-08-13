@@ -17,6 +17,11 @@ class Builder
    */
   private Model $model;
 
+  /**
+   * @var array
+   */
+  private array $bindings = [];
+
   public static function getInstance(Model $model)
   {
     $newSelf = new self();
@@ -54,19 +59,26 @@ class Builder
     return $this;
   }
 
-  public function save()
-  {
-    $attributes = $this->model->attributes();
-    if (!array_key_exists('id', $attributes)) {
-      $this->create($attributes);
-      return;
-    }
-    dd('update');
-  }
-
   public function where(string $field, string $operator, string $value)
   {
     dd($this->table);
     dd($field, $operator, $value);
+  }
+
+  private function handleStmt(string $sql)
+  {
+    $stmt = Connection::getInstance()->prepare($sql);
+    return $stmt->execute($this->bindings);
+  }
+
+  public function execute(string $sql = '')
+  {
+    if (empty($sql)) {
+      return;
+    }
+
+    dd($sql, $this->bindings);
+
+    return $this->handleStmt($sql);
   }
 }

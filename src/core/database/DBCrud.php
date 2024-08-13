@@ -9,10 +9,39 @@ trait DBCrud
     $response = DB::create($attributes);
     $sql = str_replace(':table', $this->table, $response);
 
-    dd($sql);
+    $this->bindings = $attributes;
+
+    return $this->execute($sql);
   }
 
-  public function update() {}
+  public function update(array $data, array $where)
+  {
+    $sql = DB::update($data, $where);
+    $sql = str_replace(':table', $this->table, $sql);
 
-  public function delete() {}
+    $this->bindings = [...$data, ...$where];
+
+    return $this->execute($sql);
+  }
+
+  public function delete(array $where)
+  {
+    $sql = DB::delete($where);
+    $sql = str_replace(':table', $this->table, $sql);
+
+    $this->bindings = $where;
+
+    return $this->execute($sql);
+  }
+
+  public function save()
+  {
+    $attributes = $this->model->attributes();
+    if (!array_key_exists('id', $attributes)) {
+      return $this->create($attributes);
+    }
+    $where = ['id' => $attributes['id']];
+    unset($attributes['id']);
+    return $this->update($attributes, $where);
+  }
 }
