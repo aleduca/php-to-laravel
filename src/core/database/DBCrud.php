@@ -11,7 +11,7 @@ trait DBCrud
 
     $this->bindings = $attributes;
 
-    return $this->execute($sql);
+    return $this->executeStmt($sql)->rowCount();
   }
 
   public function update(array $data, array $where)
@@ -21,7 +21,7 @@ trait DBCrud
 
     $this->bindings = [...$data, ...$where];
 
-    return $this->execute($sql);
+    return $this->executeStmt($sql)->rowCount();;
   }
 
   public function delete(array $where)
@@ -31,7 +31,7 @@ trait DBCrud
 
     $this->bindings = $where;
 
-    return $this->execute($sql);
+    return $this->executeStmt($sql)->rowCount();
   }
 
   public function save()

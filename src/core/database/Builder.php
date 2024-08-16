@@ -3,6 +3,7 @@
 namespace core\database;
 
 use Doctrine\Inflector\InflectorFactory;
+use PDO;
 
 class Builder
 {
@@ -21,6 +22,21 @@ class Builder
    * @var array
    */
   private array $bindings = [];
+
+  /**
+   * @var string
+   */
+  private string $select = '*';
+
+  /**
+   * @var array
+   */
+  private array $wheres = [];
+
+  /**
+   * @var string
+   */
+  private string $whereLogicOperator;
 
   public static function getInstance(Model $model)
   {
@@ -59,26 +75,88 @@ class Builder
     return $this;
   }
 
-  public function where(string $field, string $operator, string $value)
+  public function all()
   {
-    dd($this->table);
-    dd($field, $operator, $value);
+    $sql = "SELECT * FROM {$this->table}";
+    return $this->get($sql);
   }
 
-  private function handleStmt(string $sql)
+  public function get(string $sql = '')
   {
-    $stmt = Connection::getInstance()->prepare($sql);
-    return $stmt->execute($this->bindings);
+    return $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
   }
 
-  public function execute(string $sql = '')
+  public function first(string $sql = '')
   {
-    if (empty($sql)) {
-      return;
+    return $this->executeStmt($sql)->fetchObject($this->model::class);
+  }
+
+  public function select()
+  {
+    $this->select = (func_num_args() === 0) ? '*' : implode(', ', func_get_args());
+    return $this;
+  }
+
+  public function and()
+  {
+    $this->whereLogicOperator = 'AND';
+
+    return $this;
+  }
+
+  public function or()
+  {
+    $this->whereLogicOperator = 'OR';
+
+    return $this;
+  }
+
+  public function where(string $field, string $operator, string $value = '')
+  {
+    $where = empty($this->wheres) ?  ' WHERE' : $this->whereLogicOperator;
+
+    if (func_num_args() === 2) {
+      $value = $operator;
+      $operator = '=';
     }
 
-    dd($sql, $this->bindings);
+    // WHERE id = :id
+    $this->wheres[] = "{$where} {$field} {$operator} :{$field}";
 
-    return $this->handleStmt($sql);
+    $this->bindings = [
+      ...$this->bindings,
+      $field => $value
+    ];
+
+    return $this;
+  }
+
+  private function buildQuery()
+  {
+    $sql = "SELECT {$this->select} FROM {$this->table}";
+
+    $sql .= implode(' ', $this->wheres);
+
+    // dd($sql, $this->bindings);
+
+    return $sql;
+  }
+
+  private function executeStmt(string $sql = '')
+  {
+    if (empty($sql)) {
+      $sql = $this->buildQuery();
+    }
+
+    // dd($sql, $this->bindings);
+
+    return $this->getStmt($sql);
+  }
+
+  private function getStmt(string $sql)
+  {
+    $stmt = Connection::getInstance()->prepare($sql);
+    $stmt->execute($this->bindings);
+    return $stmt;
   }
 }
