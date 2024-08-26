@@ -14,18 +14,27 @@ trait DBCrud
     return $this->executeStmt($sql)->rowCount();
   }
 
-  public function update(array $data, array $where)
+  public function update(array $data = [], array $where = [])
   {
+    if (func_num_args() === 0) {
+      $data = $this->model->attributesChanged();
+      $where = ['id' => $this->model->id];
+    }
+
     $sql = DB::update($data, $where);
     $sql = str_replace(':table', $this->table, $sql);
 
     $this->bindings = [...$data, ...$where];
 
-    return $this->executeStmt($sql)->rowCount();;
+    return $this->executeStmt($sql)->rowCount();
   }
 
-  public function delete(array $where)
+  public function delete(array $where = [])
   {
+    if (empty($where)) {
+      $where = ['id' => $this->model->id];
+    }
+
     $sql = DB::delete($where);
     $sql = str_replace(':table', $this->table, $sql);
 
@@ -40,8 +49,9 @@ trait DBCrud
     if (!array_key_exists('id', $attributes)) {
       return $this->create($attributes);
     }
+
+    $attributesChanged = $this->model->attributesChanged();
     $where = ['id' => $attributes['id']];
-    unset($attributes['id']);
-    return $this->update($attributes, $where);
+    return $this->update($attributesChanged, $where);
   }
 }

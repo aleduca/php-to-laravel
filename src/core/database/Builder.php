@@ -2,8 +2,10 @@
 
 namespace core\database;
 
+use core\library\Paginate;
 use Doctrine\Inflector\InflectorFactory;
 use PDO;
+use stdClass;
 
 class Builder
 {
@@ -37,6 +39,32 @@ class Builder
    * @var string
    */
   private string $whereLogicOperator;
+
+
+  /**
+   * @var int
+   */
+  private int|string $offset = '';
+
+  /**
+   * @var int|string
+   */
+  private int|string $limit = '';
+
+  /**
+   * @var string
+   */
+  private string $orderBy = '';
+
+  /**
+   * @var string
+   */
+  private string $groupBy = '';
+
+  /**
+   * @var Paginate
+   */
+  private ?Paginate $paginate = null;
 
   public static function getInstance(Model $model)
   {
@@ -83,6 +111,14 @@ class Builder
 
   public function get(string $sql = '')
   {
+    if ($this->paginate) {
+      $stdclass = new stdClass;
+      $stdclass->items = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
+      $stdclass->paginate = $this->paginate;
+      $stdclass->total = $this->paginate->total;
+      return $stdclass;
+    }
+
     return $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
   }
 
@@ -94,6 +130,7 @@ class Builder
   public function select()
   {
     $this->select = (func_num_args() === 0) ? '*' : implode(', ', func_get_args());
+
     return $this;
   }
 
@@ -109,6 +146,70 @@ class Builder
     $this->whereLogicOperator = 'OR';
 
     return $this;
+  }
+
+  public function groupBy(
+    string $field
+  ) {
+    $this->groupBy = " GROUP BY {$field}";
+
+    return $this;
+  }
+
+  public function orderBy(
+    string $field,
+    string $order = 'ASC'
+  ) {
+    $this->orderBy = " ORDER BY {$field} {$order}";
+
+    return $this;
+  }
+
+  public function offset(int $offset)
+  {
+    $this->offset = ' OFFSET ' . $offset;
+
+    return $this;
+  }
+
+  public function limit(int|string $limit)
+  {
+    $this->limit = ' LIMIT ' . $limit;
+
+    return $this;
+  }
+
+  public function find(
+    string $field,
+    mixed $value = ''
+  ) {
+    if (func_num_args() === 2) {
+      return $this->where($field, $value)->first();
+    }
+
+    return $this->where('id', $field)->first();
+  }
+
+  private function count()
+  {
+    $sql = "SELECT COUNT(*) FROM {$this->table}";
+    $sql .= implode(' ', $this->wheres);
+    return $this->executeStmt($sql)->fetchColumn();
+  }
+
+  public function paginate(int $perPage = 10)
+  {
+    $count = $this->count();
+    // dd($count);
+    $this->paginate = new Paginate;
+    $this->paginate->currentPage();
+    $this->paginate->offset($perPage);
+    $this->paginate->totalPages($count);
+
+    $this->limit($perPage);
+    $this->offset($this->paginate->offset);
+
+    return $this->get();
   }
 
   public function where(string $field, string $operator, string $value = '')
@@ -136,6 +237,10 @@ class Builder
     $sql = "SELECT {$this->select} FROM {$this->table}";
 
     $sql .= implode(' ', $this->wheres);
+    $sql .= $this->groupBy;
+    $sql .= $this->orderBy;
+    $sql .= $this->limit;
+    $sql .= $this->offset;
 
     // dd($sql, $this->bindings);
 

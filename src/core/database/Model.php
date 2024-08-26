@@ -5,16 +5,24 @@ namespace core\database;
 use BadMethodCallException;
 
 /**
+ * @method static Builder limit(int|string $limit)
+ * @method static Builder select()
  * @method static Builder where(string $field, string $operator, string $value)
+ * @method static Builder paginate(intb $perPage = 10)
  */
 abstract class Model
 {
   private array $attributes = [];
+  private array $attributesChanged = [];
 
   public function __set(
     string $name,
     mixed $value
   ) {
+    if (array_key_exists($name, $this->attributes)) {
+      $this->attributesChanged[$name] = $value;
+      return;
+    }
     $this->attributes[$name] = $value;
   }
 
@@ -27,6 +35,11 @@ abstract class Model
   public function attributes()
   {
     return $this->attributes;
+  }
+
+  public function attributesChanged()
+  {
+    return $this->attributesChanged;
   }
 
   public static function newQueryBuilder(Model $model)

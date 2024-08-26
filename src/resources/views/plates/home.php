@@ -1,6 +1,13 @@
 <?php $this->layout('layout', ['title' => $title]) ?>
 
-<h2>Home</h2>
+<h2>Users (<?= $users->paginate->total ?>)</h2>
+<ul>
+  <?php foreach ($users->items as $user): ?>
+    <li><?= $user->firstName; ?></li>
+  <?php endforeach; ?>
+</ul>
+
+<?= $users->paginate->simpleLinks(); ?>
 
 <form action="/user/12" method="post">
   <?= csrf() ?>
