@@ -2,11 +2,13 @@
 
 namespace core\library;
 
+use core\auth\Auth;
+use core\auth\AuthManager;
 use core\library\Session;
 use DI\Container;
 use DI\ContainerBuilder;
-use Dotenv\Dotenv;
 
+use Dotenv\Dotenv;
 use function DI\factory;
 use Spatie\Ignition\Ignition;
 
@@ -53,6 +55,12 @@ class App
       Redirect::class => function () {
         return new Redirect($this->session);
       },
+      Auth::class => function () {
+        return Auth::create($this->session);
+      },
+      AuthManager::class => function () {
+        return AuthManager::create($this->session);
+      },
       Session::class => function () {
         return $this->session;
       }
@@ -91,6 +99,10 @@ class App
 
     bind(Session::class, function () {
       return $this->session;
+    });
+
+    bind(AuthManager::class, function () {
+      return AuthManager::create($this->session);
     });
 
     return $this;

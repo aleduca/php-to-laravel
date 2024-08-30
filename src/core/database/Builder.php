@@ -122,7 +122,7 @@ class Builder
     return $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
   }
 
-  public function first(string $sql = '')
+  public function first(string $sql = ''): object|false
   {
     return $this->executeStmt($sql)->fetchObject($this->model::class);
   }
@@ -182,7 +182,7 @@ class Builder
   public function find(
     string $field,
     mixed $value = ''
-  ) {
+  ): object|false {
     if (func_num_args() === 2) {
       return $this->where($field, $value)->first();
     }

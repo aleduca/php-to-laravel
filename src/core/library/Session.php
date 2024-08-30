@@ -6,6 +6,10 @@ class Session
 {
   public static function create(): self
   {
+    if (session_status() === PHP_SESSION_NONE) {
+      session_start();
+    }
+
     return new self;
   }
 
@@ -39,6 +43,10 @@ class Session
     if (str_contains($key, '.')) {
       [$key1, $key2] = explode('.', $key);
       return $_SESSION[$key1][$key2];
+    }
+
+    if (!$this->has($key)) {
+      return null;
     }
 
     return $_SESSION[$key];

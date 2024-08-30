@@ -6,8 +6,7 @@ class Csrf
 {
   public function __construct(
     private Session $session
-  ) {
-  }
+  ) {}
 
   public function get(): string
   {
@@ -23,9 +22,8 @@ class Csrf
     view(view: $view, status: 419, viewPath: VIEW_PATH_CORE)->send();
   }
 
-  private function regexIgnoredRoutes(): bool
+  private function routeInList(): bool
   {
-    dump('excepts');
     $excepts = configFile('csrf.ignore');
     if (!empty($excepts)) {
       foreach ($excepts as $except) {
@@ -45,7 +43,7 @@ class Csrf
     if (REQUEST_METHOD !== 'GET') {
 
       // verificar se a rota esta liberada em uma lista
-      if (!$request->get('csrf') && $this->regexIgnoredRoutes()) {
+      if (!$request->get('csrf') && $this->routeInList()) {
         return;
       }
 
@@ -56,7 +54,7 @@ class Csrf
       }
 
       // verificar se o hash bate com o hash da sessao
-      if (!hash_equals($request->get('csrf'), $this->session->get('csrf'))) {
+      if (!hash_equals($request->get('csrf'), $this->session->get('csrf') ?? '')) {
         $this->viewCsrfNotFound('errors/419');
         die();
         // throw new CSRFException('CSRF token mismatch');

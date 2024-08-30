@@ -7,6 +7,7 @@ use BadMethodCallException;
 /**
  * @method static Builder limit(int|string $limit)
  * @method static Builder select()
+ * @method static object|false find(string $field,mixed $value = '')
  * @method static Builder where(string $field, string $operator, string $value)
  * @method static Builder paginate(intb $perPage = 10)
  */
@@ -30,6 +31,13 @@ abstract class Model
     string $name
   ) {
     return $this->attributes[$name];
+  }
+
+  public function removeAttribute(string $name)
+  {
+    if (isset($this->attributes[$name])) {
+      unset($this->attributes[$name]);
+    }
   }
 
   public function attributes()

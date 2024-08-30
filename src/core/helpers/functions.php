@@ -1,5 +1,6 @@
 <?php
 
+use core\auth\AuthManager;
 use core\library\Container;
 use core\library\Layout;
 use core\library\Redirect;
@@ -39,6 +40,11 @@ function back(): Response
 function csrf(): string
 {
   return session()->csrf()->get();
+}
+
+function auth()
+{
+  return resolve(AuthManager::class);
 }
 
 function configFile(string $key)

@@ -13,4 +13,5 @@ $router->add('GET', '/product/([a-z\-]+)/category/([a-z0-9]+)', [ProductControll
 $router->add('GET', '/login', [LoginController::class, 'index']);
 $router->add('POST', '/login', [LoginController::class, 'store']);
 $router->add('DELETE', '/user/([0-9]+)', [UserController::class, 'destroy']);
+$router->add('DELETE', '/logout', [LoginController::class, 'destroy']);
 $router->execute();
