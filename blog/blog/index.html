@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clube Full-stact</title>
+
+        <!-- FAVICON -->
+        <link rel="icon" type="image/png" href="assets/images/tema/favicon.ico" />
+        <!-- FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+        <!-- Assets -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+        <!--  CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+    </head>
+
+<body>
+<!--==============================
+COMEÇA BUSCA
+============================== -->
+    <div class="popup-search-box d-none d-lg-block">
+        <button class="searchClose"><i class="fal fa-times"></i></button>
+        <form action="#">
+            <input type="text" placeholder="Qual material está procurando?">
+            <button type="submit"><i class="fal fa-search"></i></button>
+        </form>
+    </div>
+<!--==============================
+FIM BUSCA
+============================== -->
+
+<!--==============================
+COMEÇA MENU MOBILE
+============================== -->
+    <div class="ac-menu-wrapper">
+        <div class="ac-menu-area text-center">
+            <button class="ac-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="./assets/images/tema/logo.png" alt="Clube Full-Stack"></a>
+            </div>
+            <div class="ac-mobile-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--==============================
+FIM MENU MOBILE
+============================== -->
+<!--==============================
+COMEÇA HEADER
+============================== -->
+    <header class="ac-header ac-header-layout header-cfs">
+        <div class="header-top"></div>
+        <div class="ac-wrapper">
+            <div class="menu-area">
+                <div class="logo-bg"></div>
+                <div class="container ac-container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo">
+                                <a href="index.html"><img src="./assets/images/tema/logo.png" alt="Clube Full-Stack"></a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <nav class="main-menu d-none d-lg-inline-block">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="blog.html">blog</a></li>
+                                    <li><a href="contatos.html">Contato</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="ac-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
+                        </div>
+                        <div class="col-auto d-none d-xl-block">
+                            <div class="header-button">
+                                <button type="button" class="icon-btn searchBoxToggler"><i class="far fa-search"></i></button>
+                                <a href="#" class="ac-btn btn"><i class="fas fa-user me-2"></i>Fazer login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!--==============================
+    FIM HEADER
+==============================-->
+<!--==============================
+    COMEÇA SLIDE
+==============================-->
+    <section class="banner-home banner-home-bg"style="background-image: url(&quot;./assets/images/slide/background.svg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="social-links" >
+                        <span class="social-title">SIGA-NOS</span>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="banner-home-corpo">
+
+                        <span>100% de garantia de satisfação</span>
+
+                        <h3 class="banner-home-titulo ">
+                            acesso a toda<br> biblioteca do material.</h3>
+                        <p>+ de 200 imagens liberadas</p>
+                        <div class="banner-home-btn">
+                            <a href="#" class="ac-btn">Explorar materias
+                                <i class="fa-regular fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-home-images">
+                        <img src="./assets/images/slide/laravel-2.svg" class="slide-home" data-value="-2" alt="">
+                        <img src="./assets/images/slide/php.svg" class="shape slide-home" data-value="5" alt="">
+                        <img src="./assets/images/slide/Bootstrap_logo.svg" class="shape slide-home" data-value="-6" alt="">
+                        <img src="./assets/images/slide/JavaScript.svg" class=" shape slide-home" data-value="5" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--==============================
+    FIM SLIDE
+==============================-->
+<!--==============================
+    COMEÇA POSTS
+============================== -->
+<section class="ac-post-home mt-50 post-fundo">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 post-espaco">
+                <div class="col-md-6 post-titulo">
+                    <h2 class="fw-bold">posts</h2>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <a href="#" class="ac-btn">Todos Posts</a>
+                </div>
+            </div>
+        </div>
+        <div class="ac-post-content">
+            <div class="row gx-5">
+                <div class="col-xl-8 col-lg-12 col-md-12">
+                    <div class="ac-posta-main-content">
+                        <div class="ac-post-img img-transition-scale">
+                            <a href="blog.html">
+                                <img src="assets/images/cursos/dophp6.webp" alt="do php ao laravel">
+                            </a>
+                        </div>
+                        <div class="ac-posta-meta-content">
+                            <div class="ac-meta-box">
+                                <div class="ac-meta-btn">
+                                    <span>Laravel</span>
+                                </div>
+                                <div class="ac-meta-date">
+                                    <span>01 Jan 2024</span>
+                                </div>
+                            </div>
+                            <div class="ac-post-img-title left">
+                                <h2>
+                                    <a href="blog.html" class="text-capitalize">
+                                        Lorem, ipsum dolor sit amet adipisicing elit.
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12">
+                    <div class="right-side">
+                        <div class="ac-posta-main-content small">
+                            <div class="ac-post-img img-transition-scale">
+                                <a href="blog.html">
+                                    <img src="assets/images/cursos/dophp7.webp" alt="do php ao laravel">
+                                </a>
+                            </div>
+                            <div class="ac-posta-meta-content">
+                                <div class="ac-meta-box">
+                                    <div class="ac-meta-btn">
+                                        <span>Nuxt.js</span>
+                                    </div>
+                                    <div class="ac-meta-date">
+                                        <span>01 Jan 2024</span>
+                                    </div>
+                                </div>
+                                <div class="ac-post-img-title">
+                                    <h3>
+                                        <a href="blog.html" class="text-capitalize title-hover">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ac-posta-main-content small">
+                            <div class="ac-post-img img-transition-scale">
+                                <a href="blog.html">
+                                    <img src="assets/images/cursos/dophp8.webp" alt="do php ao laravel">
+                                </a>
+                            </div>
+                            <div class="ac-posta-meta-content">
+                                <div class="ac-meta-box">
+                                    <div class="ac-meta-btn">
+                                        <span>Nuxt.js</span>
+                                    </div>
+                                    <div class="ac-meta-date">
+                                        <span>01 Jan 2024</span>
+                                    </div>
+                                </div>
+                                <div class="ac-post-img-title">
+                                    <h3>
+                                        <a href="blog.html" class="text-capitalize title-hover">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==============================
+    FIM POSTS
+============================== -->
+<!--==============================
+    COMEÇA FOOTER
+============================== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="text-center py-50">
+                    <ul class="footer-social">
+
+                        <li class="footer-social-icon"><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
+                        <li class="footer-social-icon"><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+                        <li class="footer-social-icon"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="footer-social-icon"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                    <ul class="footer-menu mb-50">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item"><a href="blog.html">blog</a></li>
+                        <li class="menu-item"><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center footer-copyright">
+                <h5>© Copyright 2024</h5>
+            </div>
+        </div>
+    </footer>
+
+<!--==============================
+    FIM FOOTER
+============================== -->
+
+<!--==============================
+    SCROLL TO TOP
+============================== -->
+    <div class="scroll-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+<!--==============================
+    FIM SCROLL TO TOP
+============================== -->
+
+    <!-- JQUERY -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- TEMMA -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
