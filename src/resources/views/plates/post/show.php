@@ -153,16 +153,21 @@
         </div>
         <div class="blog-formulario">
           <h5>Deixe um comentário</h5>
-          <form action="#">
+          <?= flash('error'); ?>
+          <form action="/comment" method="POST">
+            <?= csrf(); ?>
             <div class="row">
               <div class="col-lg-6">
-                <input type="text" placeholder="Nome completo" required="">
+                <?= flash('name', 'text text-danger'); ?>
+                <input type="text" name="name" placeholder="Nome completo" value="Alexandre">
               </div>
               <div class="col-lg-6">
-                <input type="email" placeholder="Endereço de email" required="">
+                <?= flash('email', 'text text-danger'); ?>
+                <input type="email" name="email" placeholder="Endereço de email" value="alecaaar@gmail.com">
               </div>
               <div class="col-lg-12">
-                <textarea name="text" placeholder="Escreva seu comentário aqui"></textarea>
+                <?= flash('comment', 'text text-danger'); ?>
+                <textarea name="comment" placeholder="Escreva seu comentário aqui">Comment</textarea>
               </div>
               <div class="col-12">
                 <button type="submit" class="submit-btn">Envie agora</button>

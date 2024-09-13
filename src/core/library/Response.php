@@ -8,8 +8,7 @@ class Response
     private string $content = '',
     private int $status = 200,
     private array $headers = []
-  ) {
-  }
+  ) {}
 
   public function json(
     array $data

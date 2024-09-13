@@ -8,8 +8,7 @@ class Flash
 {
   public function __construct(
     private Session $session
-  ) {
-  }
+  ) {}
 
   public function set(
     array $data

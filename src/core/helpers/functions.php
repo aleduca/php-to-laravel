@@ -77,6 +77,30 @@ function method(string $method): string
   return "<input type='hidden' name='_method' value='$method'>";
 }
 
+function timerExpired(string $idSession, int $seconds = 60)
+{
+  date_default_timezone_set('America/Sao_Paulo');
+  if (isset($_SESSION[$idSession])) {
+    $lastTry = new DateTime($_SESSION[$idSession]);
+    $now = new DateTime();
+
+    if ($lastTry > $now) {
+      return false;
+    }
+
+    unset($_SESSION[$idSession]);
+    return true;
+  }
+
+  $_SESSION[$idSession] = (new DateTime())->modify("+{$seconds} seconds")->format('Y-m-d H:i:s');
+
+  // $now = new DateTime();
+
+  // dd($now->format('Y-m-d H:i:s'), $_SESSION[$idSession]);
+  return false;
+}
+
+
 function response(
   string $content = '',
   int $status = 200,

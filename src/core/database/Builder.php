@@ -2,6 +2,7 @@
 
 namespace core\database;
 
+use core\library\Collection;
 use core\library\Paginate;
 use Doctrine\Inflector\InflectorFactory;
 use PDO;
@@ -119,7 +120,9 @@ class Builder
       return $stdclass;
     }
 
-    return $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
+    $result = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
+
+    return new Collection($result);
   }
 
   public function first(string $sql = ''): object|false
