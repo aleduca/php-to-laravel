@@ -9,24 +9,9 @@ class HomeController
 {
   public function index(): Response
   {
-    $posts = Post::limit(10)->get();
+    $posts = Post::with('user', 'category')->where('id', '>', 10)->paginate(10);
 
-    $has = $posts->has(0);
-
-    // dd($has);
-
-    $collection = collect([1, 2, 3, 4, 5, 6]);
-
-    $has = $collection->has(0);
-
-    dd($has);
-
-    // $result = $collection->pop();
-
-    // $posts->each(function ($post) {
-    //   dump($post->id);
-    // });
-
+    dd($posts);
 
     return view('home', [
       'title' => 'Home Page',

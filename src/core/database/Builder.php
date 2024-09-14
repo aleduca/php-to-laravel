@@ -10,7 +10,7 @@ use stdClass;
 
 class Builder
 {
-  use DBCrud;
+  use DBCrud, Relations;
   /**
    * @var string
    */
@@ -76,9 +76,10 @@ class Builder
     return $newSelf;
   }
 
-  private function setTable(): void
+  private function setTable(string $model = ''): void
   {
-    $reflect = new \ReflectionClass($this->model);
+    $model = empty($model) ? $this->model : $model;
+    $reflect = new \ReflectionClass($model);
 
     if (!$reflect->hasProperty('table')) {
       $inflector = InflectorFactory::create()->build();
@@ -115,6 +116,10 @@ class Builder
     if ($this->paginate) {
       $stdclass = new stdClass;
       $stdclass->items = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
+
+      //relations
+      $this->setRelations($stdclass->items);
+
       $stdclass->paginate = $this->paginate;
       $stdclass->total = $this->paginate->total;
       return $stdclass;
@@ -122,12 +127,25 @@ class Builder
 
     $result = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $this->model::class);
 
+    // relations
+    $this->setRelations($result);
+
     return new Collection($result);
+  }
+
+  private function resetBindingsSql()
+  {
+    $this->bindings = [];
   }
 
   public function first(string $sql = ''): object|false
   {
-    return $this->executeStmt($sql)->fetchObject($this->model::class);
+    $result = $this->executeStmt($sql)->fetchObject($this->model::class);
+
+    // relations
+    $this->setRelations([$result]);
+
+    return $result;
   }
 
   public function select()
@@ -264,6 +282,7 @@ class Builder
   private function getStmt(string $sql)
   {
     $stmt = Connection::getInstance()->prepare($sql);
+    dump($sql, $this->bindings);
     $stmt->execute($this->bindings);
     return $stmt;
   }
