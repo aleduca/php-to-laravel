@@ -15,7 +15,7 @@ trait Relations
     return $this;
   }
 
-  public function setRelations(array $data)
+  private function setRelations(array $data)
   {
     if (empty($this->relations)) {
       return;
@@ -49,6 +49,28 @@ trait Relations
 
     foreach ($data as $item) {
       $item->{$relation['relation']} = $relatedMap[$item->{$relation['foreignKey']}];
+    }
+  }
+
+  private function hasMany(array $data, array $relation)
+  {
+    $this->setTable($relation['model']);
+
+    $ids = array_map(function ($item) {
+      return $item->id;
+    }, $data);
+
+    $sql =  "SELECT * FROM {$this->table} where {$relation['foreignKey']} IN(" . implode(',', $ids) . ")";
+
+    $relatedItems = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $relation['model']);
+
+    $relatedMap = [];
+    foreach ($relatedItems as $item) {
+      $relatedMap[$item->{$relation['foreignKey']}][] = $item;
+    }
+
+    foreach ($data as $item) {
+      $item->{$relation['relation']} = $relatedMap[$item->id] ?? [];
     }
   }
 }
