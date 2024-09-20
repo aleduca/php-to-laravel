@@ -73,4 +73,26 @@ trait Relations
       $item->{$relation['relation']} = $relatedMap[$item->id] ?? [];
     }
   }
+
+  private function belongsToMany(array $data, array $relation)
+  {
+    $this->setTable($relation['model']);
+
+    $ids = array_map(function ($item) {
+      return $item->id;
+    }, $data);
+
+    $sql = "SELECT {$this->table}.*,{$relation['pivotTable']}.{$relation['foreignKey']},{$relation['pivotTable']}.{$relation['relatedKey']} FROM {$this->table} INNER JOIN {$relation['pivotTable']} ON {$relation['pivotTable']}.{$relation['relatedKey']} = {$this->table}.id WHERE {$relation['pivotTable']}.{$relation['foreignKey']} IN (" . implode(',', $ids) . ')';
+
+    $relatedItems = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $relation['model']);
+
+    $relatedMap = [];
+    foreach ($relatedItems as $item) {
+      $relatedMap[$item->{$relation['foreignKey']}][] = $item;
+    }
+
+    foreach ($data as $item) {
+      $item->{$relation['relation']} = $relatedMap[$item->id] ?? [];
+    }
+  }
 }

@@ -3,15 +3,16 @@
 namespace app\controllers;
 
 use app\database\models\Post;
+use app\database\models\Tag;
 use core\library\Response;
 
 class HomeController
 {
   public function index(): Response
   {
-    $posts = Post::limit(10)->with('user', 'category', 'comments')->where('id', '>', 10)->get();
+    $tags = Tag::limit(10)->with('posts')->get();
 
-    dd($posts);
+    dd($tags);
 
     return view('home', [
       'title' => 'Home Page',

@@ -38,4 +38,16 @@ class Post extends Model
       'relation' => 'comments',
     ];
   }
+
+  public function tags()
+  {
+    return [
+      'type' => 'belongsToMany',
+      'model' => Tag::class,
+      'pivotTable' => 'post_tag',
+      'foreignKey' => 'post_id',
+      'relatedKey' => 'tag_id',
+      'relation' => 'tags',
+    ];
+  }
 }
