@@ -95,4 +95,27 @@ trait Relations
       $item->{$relation['relation']} = $relatedMap[$item->id] ?? [];
     }
   }
+
+  private function hasOne(array $data, array $relation)
+  {
+    $this->setTable($relation['model']);
+
+    $ids = array_map(function ($item) {
+      return $item->id;
+    }, $data);
+
+    $sql = "SELECT * FROM {$this->table} where {$this->table}.{$relation['foreignKey']} IN(" . implode(',', $ids) . ")";
+
+    $relatedItems = $this->executeStmt($sql)->fetchAll(PDO::FETCH_CLASS, $relation['model']);
+
+    $relatedMap = [];
+
+    foreach ($relatedItems as $relatedItem) {
+      $relatedMap[$relatedItem->{$relation['foreignKey']}] = $relatedItem;
+    }
+
+    foreach ($data as $item) {
+      $item->{$relation['relation']} = $relatedMap[$item->id] ?? null;
+    }
+  }
 }
