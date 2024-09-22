@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use core\auth\AuthManager;
 use core\library\Container;
 use core\library\Layout;
@@ -75,6 +76,24 @@ function flash(
 function method(string $method): string
 {
   return "<input type='hidden' name='_method' value='$method'>";
+}
+
+function formatDate(string $date)
+{
+  Carbon::setLocale('pt_BR');
+  return Carbon::createFromDate($date);
+}
+
+function truncate(string $text, int $length)
+{
+  if (strlen($text) <= $length) {
+    return strip_tags($text);
+  }
+
+  $text = substr($text, 0, $length);
+  $text .= '...';
+
+  return strip_tags($text);
 }
 
 function timerExpired(string $idSession, int $seconds = 60)

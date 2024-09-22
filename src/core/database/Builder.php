@@ -282,7 +282,7 @@ class Builder
   private function getStmt(string $sql)
   {
     $stmt = Connection::getInstance()->prepare($sql);
-    dump($sql, $this->bindings);
+    // dump($sql, $this->bindings);
     $stmt->execute($this->bindings);
     return $stmt;
   }

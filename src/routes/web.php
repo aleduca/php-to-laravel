@@ -7,6 +7,6 @@ use core\library\Router;
 
 $router = $app->container->get(Router::class);
 $router->add('GET', '/', [HomeController::class, 'index']);
-$router->add('GET', '/post/([a-z]+)', [PostController::class, 'show']);
+$router->add('GET', '/post/([a-z\-]+)', [PostController::class, 'show']);
 $router->add('POST', '/comment', [CommentController::class, 'store']);
 $router->execute();

@@ -3,8 +3,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <p class="my-2">Nome da categoria</p>
-        <h1>Tema da noticia</h1>
+        <p class="my-2"><?= $post->category->name; ?></p>
+        <h1>
+          <?= $post->title; ?>
+        </h1>
       </div>
     </div>
   </div>
@@ -20,7 +22,7 @@
           <div class="ac-post-conteudo-like">
             <p><i class="fa-light fa-clock"></i>06 minutos de leitura</a>
             <p><i class="fa-light fa-eye"></i>3.5k visualizações</a>
-            <p><i class="fa-light fa-comment-dots"></i> 05 Comentários</a>
+            <p><i class="fa-light fa-comment-dots"></i> <?= count($post->comments);  ?> Comentários</a>
             <p><i class="fa-light fa-arrow-up-from-bracket"></i>1,5k compartilhamentos</a>
           </div>
           <p class="lh-base">Mauris in aliquam sem fringilla ut morbi tincidunt augue. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Leo a diam sollicitudin tempor id eu nisl. Praesent semper feugiat nibh sed pulvinar proin. Nisi quis
@@ -69,9 +71,12 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="blog-conteudo-detalhe-tag d-flex">
                 <h6 class="me-2">Tags:</h6>
-                <button>Finance</button>
-                <button>Economic</button>
-                <button>Bank</button>
+                <?php if (empty($tags = $post->tags)):  ?>
+                  No tags to this post
+                <?php endif; ?>
+                <?php foreach ($tags as $tag): ?>
+                  <button><?= $tag->name; ?></button>
+                <?php endforeach; ?>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -88,10 +93,10 @@
         </div>
         <div class="blog-conteudo-autor">
           <div class="blog-conteudo-imagem">
-            <img src="<?= ASSETS ?>/images/tema/avatar.jpg" alt="author">
+            <img src="<?= $post->user->image ?>" alt="author">
           </div>
           <div class="blog-conteudo-content">
-            <h5 class="mb-10">Alexandre Cardoso</h5>
+            <h5 class="mb-10"><?= $post->user->firstName ?> <?= $post->user->lastName ?></h5>
             <p class="lh-base">
               I am an Example Writer. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labored et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
@@ -127,28 +132,21 @@
         <div class="blog-comentarios">
           <h5>Comentarios</h5>
           <ul class="m-0 p-0">
-            <li class="blog-comentarios-lista">
-              <div class="blog-conteudo-imagem">
-                <img src="<?= ASSETS ?>/images/tema/comentarios.jpg" class="rounded-circle" alt="autor">
-              </div>
-              <div class="blog-comentarios-content">
-                <h5 class="title">Alexandre Cardoso</h5>
-                <a href="#" class="pe-none">2 Jul 2024</a>
-                <p class="desc">Efficiently simplify alternative customer service rather than efficient "outside the box" thinking. Dramatically deploy an expanded array of manufactured.</p>
-              </div>
-              <div class="reply"><i class="fa-regular fa-share"></i> Responder</div>
-            </li>
-            <li class="blog-comentarios-lista">
-              <div class="blog-conteudo-imagem">
-                <img src="<?= ASSETS ?>/images/tema/comentarios.jpg" class="rounded-circle" alt="autor">
-              </div>
-              <div class="blog-comentarios-content">
-                <h5 class="title">Alexandre Cardoso</h5>
-                <a href="#" class="pe-none">2 Jul 2024</a>
-                <p class="desc">Efficiently simplify alternative customer service rather than efficient "outside the box" thinking. Dramatically deploy an expanded array of manufactured.</p>
-              </div>
-              <div class="reply"><i class="fa-regular fa-share"></i> Responder</div>
-            </li>
+            <?php foreach ($post->comments as $comment): ?>
+              <li class="blog-comentarios-lista">
+                <div class="blog-conteudo-imagem">
+                  <img src="<?= ASSETS ?>/images/tema/comentarios.jpg" class="rounded-circle" alt="autor">
+                </div>
+                <div class="blog-comentarios-content">
+                  <h5 class="title">Alexandre Cardoso</h5>
+                  <a href="#" class="pe-none">
+                    <?= formatDate($comment->created_at)->translatedFormat('d F Y') ?>
+                  </a>
+                  <p class="desc"><?= $comment->comment; ?></p>
+                </div>
+                <div class="reply"><i class="fa-regular fa-share"></i> Responder</div>
+              </li>
+            <?php endforeach; ?>
           </ul>
         </div>
         <div class="blog-formulario">

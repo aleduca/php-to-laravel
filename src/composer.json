@@ -28,6 +28,7 @@
         "latte/latte": "^3.0",
         "smarty/smarty": "^5.3",
         "twig/twig": "^3.10",
-        "doctrine/inflector": "^2.0"
+        "doctrine/inflector": "^2.0",
+        "nesbot/carbon": "^3.8"
     }
 }
