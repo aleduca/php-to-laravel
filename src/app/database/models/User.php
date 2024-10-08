@@ -17,4 +17,14 @@ class User extends Model
       'relation' => 'avatar'
     ];
   }
+
+  public function comments()
+  {
+    return [
+      'type' => 'hasMany',
+      'model' => Comment::class,
+      'foreignKey' => 'user_id',
+      'relation' => 'comments'
+    ];
+  }
 }
