@@ -93,7 +93,7 @@
         </div>
         <div class="blog-conteudo-autor">
           <div class="blog-conteudo-imagem">
-            <img src="<?= $post->user->image ?>" alt="author">
+            <img src="<?= $post->user->avatar->image ?? 'https://randomuser.me/api/portraits/women/18.jpg' ?>" alt="author">
           </div>
           <div class="blog-conteudo-content">
             <h5 class="mb-10"><?= $post->user->firstName ?> <?= $post->user->lastName ?></h5>
@@ -135,10 +135,10 @@
             <?php foreach ($post->comments as $comment): ?>
               <li class="blog-comentarios-lista">
                 <div class="blog-conteudo-imagem">
-                  <img src="<?= ASSETS ?>/images/tema/comentarios.jpg" class="rounded-circle" alt="autor">
+                  <img src="<?= $comment->user->avatar->image ?? 'https://randomuser.me/api/portraits/women/18.jpg'; ?>" class="rounded-circle" alt="autor">
                 </div>
                 <div class="blog-comentarios-content">
-                  <h5 class="title">Alexandre Cardoso</h5>
+                  <h5 class="title"><?= $comment->user->firstName ?> <?= $comment->user->lastName ?></h5>
                   <a href="#" class="pe-none">
                     <?= formatDate($comment->created_at)->translatedFormat('d F Y') ?>
                   </a>

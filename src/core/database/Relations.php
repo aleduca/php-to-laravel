@@ -17,10 +17,10 @@ trait Relations
     foreach ($relations as $relation) {
       if (str_contains($relation, '.')) {
         $subrelations = explode('.', $relation);
-        if (count($subrelations) > 3) {
-          throw new Exception("Maximum 3 levels of nested relations are allowed {$relation}");
-        }
 
+        if (count($subrelations) > 4) {
+          throw new Exception("Maximum 4 levels of nested relations are allowed {$relation}");
+        }
 
         if (!in_array($subrelations[0], $this->relations)) {
           $this->relations[] = $subrelations[0];
@@ -40,16 +40,21 @@ trait Relations
     return $this;
   }
 
-  private function setNestedRelations(array $subrelations)
+  private function setNestedRelations(array $subrelations): void
   {
     if (count($subrelations) == 2) {
       $this->subRelations[$subrelations[0]][$subrelations[1]] = [];
-      $this->subRelations[$subrelations[0]]['isNested'] = false;
+      $this->subRelations[$subrelations[0]][$subrelations[1]]['isNested'] = false;
     }
 
     if (count($subrelations) === 3) {
       $this->subRelations[$subrelations[0]][$subrelations[1]][$subrelations[2]] = [];
-      $this->subRelations[$subrelations[0]]['isNested'] = true;
+      $this->subRelations[$subrelations[0]][$subrelations[1]]['isNested'] = true;
+    }
+
+    if (count($subrelations) === 4) {
+      $this->subRelations[$subrelations[0]][$subrelations[1]][$subrelations[2]][$subrelations[3]] = [];
+      $this->subRelations[$subrelations[0]][$subrelations[1]]['isNested'] = true;
     }
   }
 
@@ -69,32 +74,63 @@ trait Relations
     }
   }
 
-  private function setSubRelations(array $relatedItems, array $relation)
+  private function setSubRelations(array $relatedItems, array $relation): void
   {
-    $subRelation = $this->subRelations[$relation['relation']];
+    $subRelations = $this->subRelations[$relation['relation']];
+
+    foreach($subRelations as $method => $subRelation){
     $isNested = $subRelation['isNested'];
     $model = new $relation['model'];
-
-    if (!$isNested) {
-      while (!empty($subRelation)) {
-        unset($subRelation['isNested']);
-        $method = array_key_first($subRelation);
-        array_shift($subRelation);
-        $relationModel = $model->{$method}();
-        $this->{$relationModel['type']}($relatedItems, $relationModel, true);
+      if (!$isNested) {
+        while (!empty($subRelation)) {
+          unset($subRelation['isNested']);
+          array_shift($subRelation);
+          $relationModel = $model->{$method}();
+          $this->{$relationModel['type']}($relatedItems, $relationModel);
+        }
       }
-      return;
+
+      $this->processNestedSubRelations(
+        $subRelation,
+        $relatedItems,
+        $model,
+        $method
+      );
+
     }
 
+  }
+
+  private function processNestedSubRelations(
+    array $subRelation,
+    array $relatedItems,
+    Model $model,
+    string $method
+  ): void {
     unset($subRelation['isNested']);
-    $method = array_key_first($subRelation);
+
+    // Obtem o model do relacionamento e executa o método adequado
     $relationModel = $model->{$method}();
     $relatedItems = $this->{$relationModel['type']}($relatedItems, $relationModel, true);
 
-    $method = array_key_first($subRelation[$method]);
+    // Obtém o próximo método do sub-relacionamento
+    $nextMethod = array_key_first($subRelation);
+
+    // Verifica se há um próximo método a ser processado
+    if(!$nextMethod){
+      return;
+    }
+
+    $subRelation = $subRelation[$nextMethod];
+    unset($subRelation['isNested']);
+
+    // Cria uma nova instancia do Model e processa o prócimo método
     $model = new $relationModel['model'];
-    $relationModel = $model->{$method}();
-    $this->{$relationModel['type']}($relatedItems, $relationModel);
+    $this->processNestedSubRelations(
+      $subRelation,
+      $relatedItems,
+      $model,
+      $nextMethod);
   }
 
   private function belongsTo(array $data, array $relation, bool $returnItems = false)
@@ -126,7 +162,7 @@ trait Relations
 
     // dd($relation, $this->subRelations);
 
-    if (!$returnItems && array_key_exists($relation['relation'], $this->subRelations)) {
+    if (array_key_exists($relation['relation'], $this->subRelations)) {
       $this->setSubRelations($relatedItems, $relation);
     }
   }
@@ -158,7 +194,7 @@ trait Relations
       return $relatedItems;
     }
 
-    if (!$returnItems && array_key_exists($relation['relation'], $this->subRelations)) {
+    if (array_key_exists($relation['relation'], $this->subRelations)) {
       $this->setSubRelations($relatedItems, $relation);
     }
   }
@@ -215,7 +251,7 @@ trait Relations
       return $relatedItems;
     }
 
-    if (!$returnItems && array_key_exists($relation['relation'], $this->subRelations)) {
+    if (array_key_exists($relation['relation'], $this->subRelations)) {
       $this->setSubRelations($relatedItems, $relation);
     }
   }

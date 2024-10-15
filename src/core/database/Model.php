@@ -59,7 +59,7 @@ abstract class Model
   {
     $queryBuilder = self::newQueryBuilder($this);
     if (!method_exists($queryBuilder, $name)) {
-      throw new BadMethodCallException("Method {$name} does not exist in Builder class");
+      throw new BadMethodCallException("Method {$name} does not exist in " . static::class . " class");
     }
     return $queryBuilder->$name(...$arguments);
   }

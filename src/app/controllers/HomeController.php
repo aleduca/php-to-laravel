@@ -10,7 +10,8 @@ class HomeController
 {
   public function index(): Response
   {
-    $posts = Post::orderBy('id', 'desc')->limit(3)->with('user.avatar', 'user.comments', 'category', 'comments.user.avatar')->get();
+    $posts = Post::orderBy('id', 'desc')->limit(3)->with('user.avatar',
+      'user.comments', 'category', 'comments.user.avatar')->get();
 
     // 'user' => ['avatar' => [],'comments' => []]
     // 'comments' => ['user' => ['avatar' => []]]

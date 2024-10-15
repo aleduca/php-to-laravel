@@ -15,4 +15,14 @@ class Comment extends Model
       'relation' => 'user'
     ];
   }
+
+  public function replies()
+  {
+    return [
+      'type' => 'hasMany',
+      'model' => Reply::class,
+      'foreignKey' => 'comment_id',
+      'relation' => 'replies'
+    ];
+  }
 }

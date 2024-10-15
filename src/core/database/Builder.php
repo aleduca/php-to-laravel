@@ -130,7 +130,7 @@ class Builder
     // relations
     $this->setRelations($result);
 
-    dd($result);
+//    dd($result);
 
     return new Collection($result);
   }
