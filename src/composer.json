@@ -29,6 +29,7 @@
         "smarty/smarty": "^5.3",
         "twig/twig": "^3.10",
         "doctrine/inflector": "^2.0",
-        "nesbot/carbon": "^3.8"
+        "nesbot/carbon": "^3.8",
+        "phpmailer/phpmailer": "^6.9"
     }
 }

@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use app\database\models\Post;
-use app\database\models\User;
 use core\library\Response;
+use core\mail\Mail;
 
 class HomeController
 {
