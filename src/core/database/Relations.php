@@ -78,9 +78,9 @@ trait Relations
   {
     $subRelations = $this->subRelations[$relation['relation']];
 
-    foreach($subRelations as $method => $subRelation){
-    $isNested = $subRelation['isNested'];
-    $model = new $relation['model'];
+    foreach ($subRelations as $method => $subRelation) {
+      $isNested = $subRelation['isNested'];
+      $model = new $relation['model'];
       if (!$isNested) {
         while (!empty($subRelation)) {
           unset($subRelation['isNested']);
@@ -88,17 +88,15 @@ trait Relations
           $relationModel = $model->{$method}();
           $this->{$relationModel['type']}($relatedItems, $relationModel);
         }
+      } else {
+        $this->processNestedSubRelations(
+          $subRelation,
+          $relatedItems,
+          $model,
+          $method
+        );
       }
-
-      $this->processNestedSubRelations(
-        $subRelation,
-        $relatedItems,
-        $model,
-        $method
-      );
-
     }
-
   }
 
   private function processNestedSubRelations(
@@ -109,6 +107,10 @@ trait Relations
   ): void {
     unset($subRelation['isNested']);
 
+    if (empty($relatedItems)) {
+      return;
+    }
+
     // Obtem o model do relacionamento e executa o método adequado
     $relationModel = $model->{$method}();
     $relatedItems = $this->{$relationModel['type']}($relatedItems, $relationModel, true);
@@ -117,7 +119,7 @@ trait Relations
     $nextMethod = array_key_first($subRelation);
 
     // Verifica se há um próximo método a ser processado
-    if(!$nextMethod){
+    if (!$nextMethod) {
       return;
     }
 
@@ -130,7 +132,8 @@ trait Relations
       $subRelation,
       $relatedItems,
       $model,
-      $nextMethod);
+      $nextMethod
+    );
   }
 
   private function belongsTo(array $data, array $relation, bool $returnItems = false)
