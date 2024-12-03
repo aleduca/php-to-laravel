@@ -1,0 +1,2143 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method app\\controllers\\CommentController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/CommentController.php
+
+		-
+			message: '#^Parameter \#1 \$data of method core\\library\\Response\:\:with\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/controllers/CommentController.php
+
+		-
+			message: '#^Call to an undefined static method app\\database\\models\\Post\:\:orderBy\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/controllers/HomeController.php
+
+		-
+			message: '#^Cannot call method all\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/controllers/HomeController.php
+
+		-
+			message: '#^Cannot call method get\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/controllers/HomeController.php
+
+		-
+			message: '#^Cannot call method limit\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/controllers/HomeController.php
+
+		-
+			message: '#^Cannot call method with\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/controllers/HomeController.php
+
+		-
+			message: '#^Method app\\controllers\\LoginController\:\:destroy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/LoginController.php
+
+		-
+			message: '#^Method app\\controllers\\LoginController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/LoginController.php
+
+		-
+			message: '#^Method app\\controllers\\LoginController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/LoginController.php
+
+		-
+			message: '#^Parameter \#1 \$data of method core\\library\\Flash\:\:set\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/controllers/LoginController.php
+
+		-
+			message: '#^Parameter \#1 \$email of method core\\auth\\Auth\:\:attempt\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/controllers/LoginController.php
+
+		-
+			message: '#^Parameter \#2 \$password of method core\\auth\\Auth\:\:attempt\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/controllers/LoginController.php
+
+		-
+			message: '#^Method app\\controllers\\PostController\:\:show\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/PostController.php
+
+		-
+			message: '#^Static method core\\database\\Model\:\:where\(\) invoked with 2 parameters, 3 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: app/controllers/PostController.php
+
+		-
+			message: '#^Method app\\controllers\\ProductController\:\:show\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/ProductController.php
+
+		-
+			message: '#^Method app\\controllers\\UserController\:\:destroy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/UserController.php
+
+		-
+			message: '#^Method app\\controllers\\UserController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/controllers/UserController.php
+
+		-
+			message: '#^Method app\\database\\models\\Comment\:\:replies\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Comment.php
+
+		-
+			message: '#^Method app\\database\\models\\Comment\:\:user\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Comment.php
+
+		-
+			message: '#^Method app\\database\\models\\Post\:\:category\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Post.php
+
+		-
+			message: '#^Method app\\database\\models\\Post\:\:comments\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Post.php
+
+		-
+			message: '#^Method app\\database\\models\\Post\:\:tags\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Post.php
+
+		-
+			message: '#^Method app\\database\\models\\Post\:\:user\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Post.php
+
+		-
+			message: '#^Method app\\database\\models\\Reply\:\:comment\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/database/models/Reply.php
+
+		-
+			message: '#^Method app\\database\\models\\Reply\:\:user\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/database/models/Reply.php
+
+		-
+			message: '#^Method app\\database\\models\\Tag\:\:posts\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/Tag.php
+
+		-
+			message: '#^Method app\\database\\models\\User\:\:avatar\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/User.php
+
+		-
+			message: '#^Method app\\database\\models\\User\:\:comments\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/database/models/User.php
+
+		-
+			message: '#^Method app\\middlewares\\AuthMiddleware\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/middlewares/AuthMiddleware.php
+
+		-
+			message: '#^Method app\\middlewares\\GuestMiddleware\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/middlewares/GuestMiddleware.php
+
+		-
+			message: '#^Method app\\middlewares\\TesteMiddleware\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/middlewares/TesteMiddleware.php
+
+		-
+			message: '#^Parameter \#2 \$subject of function preg_match expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/rules/Cpf.php
+
+		-
+			message: '#^Access to an undefined property object\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 1
+			path: core/auth/Auth.php
+
+		-
+			message: '#^Call to an undefined method object\:\:removeAttribute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: core/auth/Auth.php
+
+		-
+			message: '#^Method core\\auth\\Auth\:\:logout\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/auth/Auth.php
+
+		-
+			message: '#^Parameter \#2 \$hash of function password_verify expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/auth/Auth.php
+
+		-
+			message: '#^Static method core\\database\\Model\:\:select\(\) invoked with 5 parameters, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: core/auth/Auth.php
+
+		-
+			message: '#^Method core\\auth\\AuthManager\:\:guest\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/auth/AuthManager.php
+
+		-
+			message: '#^Method core\\auth\\AuthManager\:\:user\(\) should return app\\database\\models\\User\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/auth/AuthManager.php
+
+		-
+			message: '#^Access to an undefined property core\\database\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 5
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot access offset ''isNested'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 6
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot access offset ''model'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot access offset ''type'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 3
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot access offset mixed on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 9
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot access property \$id on mixed\.$#'
+			identifier: property.nonObject
+			count: 7
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot call method fetchAll\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 6
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot call method fetchColumn\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot call method fetchObject\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot call method first\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Cannot call method rowCount\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:all\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:and\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:belongsTo\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:belongsTo\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:belongsTo\(\) has parameter \$relation with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:belongsToMany\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:belongsToMany\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:belongsToMany\(\) has parameter \$relation with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:buildQuery\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:count\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:create\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:create\(\) has parameter \$attributes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:delete\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:delete\(\) has parameter \$where with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:executeStmt\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:find\(\) should return object\|false but returns mixed\.$#'
+			identifier: return.type
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:first\(\) should return object\|false but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:getInstance\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:getStmt\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:groupBy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:hasMany\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:hasMany\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:hasMany\(\) has parameter \$relation with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:hasOne\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:hasOne\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:hasOne\(\) has parameter \$relation with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:limit\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:offset\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:or\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:orderBy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:paginate\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:processNestedSubRelations\(\) has parameter \$relatedItems with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:processNestedSubRelations\(\) has parameter \$subRelation with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:resetBindingsSql\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:save\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:select\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:setNestedRelations\(\) has parameter \$subrelations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:setRelations\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:setRelations\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:setSubRelations\(\) has parameter \$relatedItems with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:setSubRelations\(\) has parameter \$relation with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:update\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:update\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:update\(\) has parameter \$where with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:where\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Builder\:\:with\(\) has parameter \$relations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Only iterables can be unpacked, mixed given\.$#'
+			identifier: arrayUnpacking.nonIterable
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_shift expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$attributes of method core\\database\\Builder\:\:create\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$count of method core\\library\\Paginate\:\:totalPages\(\) expects int, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$data of method core\\database\\Builder\:\:setRelations\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$data of method core\\database\\Builder\:\:update\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$data of static method core\\database\\DB\:\:update\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$haystack of function str_contains expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$items of class core\\library\\Collection constructor expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$key of function array_key_exists expects int\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$model of method core\\database\\Builder\:\:setTable\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 4
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, core\\database\\Model\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$relatedItems of method core\\database\\Builder\:\:setSubRelations\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$sql of method core\\database\\Builder\:\:getStmt\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#1 \$subRelation of method core\\database\\Builder\:\:processNestedSubRelations\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_key_exists expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#2 \$operator of method core\\database\\Builder\:\:where\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#2 \$relatedItems of method core\\database\\Builder\:\:processNestedSubRelations\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#2 \$string of function explode expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#3 \$model of method core\\database\\Builder\:\:processNestedSubRelations\(\) expects core\\database\\Model, object given\.$#'
+			identifier: argument.type
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function str_replace expects array\<string\>\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#4 \$method of method core\\database\\Builder\:\:processNestedSubRelations\(\) expects string, int\<min, \-1\>\|int\<1, max\>\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Parameter \#4 \$method of method core\\database\\Builder\:\:processNestedSubRelations\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Part \$relation \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Part \$relation\[''foreignKey''\] \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 4
+			path: core/database/Builder.php
+
+		-
+			message: '#^Part \$relation\[''pivotTable''\] \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 5
+			path: core/database/Builder.php
+
+		-
+			message: '#^Part \$relation\[''relatedKey''\] \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 2
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$bindings type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$limit \(int\|string\) is never assigned int so it can be removed from the property type\.$#'
+			identifier: property.unusedType
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$offset \(int\|string\) is never assigned int so it can be removed from the property type\.$#'
+			identifier: property.unusedType
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$relations type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$subRelations type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$table \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Property core\\database\\Builder\:\:\$wheres type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Builder.php
+
+		-
+			message: '#^Method core\\database\\Connection\:\:getInstance\(\) should return PDO but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/database/Connection.php
+
+		-
+			message: '#^Parameter \#2 \$username of class PDO constructor expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Connection.php
+
+		-
+			message: '#^Parameter \#3 \$password of class PDO constructor expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Connection.php
+
+		-
+			message: '#^Part \$database \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: core/database/Connection.php
+
+		-
+			message: '#^Part \$host \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: core/database/Connection.php
+
+		-
+			message: '#^Property core\\database\\Connection\:\:\$instance has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: core/database/Connection.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:create\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:create\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:delete\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:delete\(\) has parameter \$where with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:update\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:update\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\DB\:\:update\(\) has parameter \$where with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/DB.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:__call\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:__callStatic\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:__get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:attributes\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:attributesChanged\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:newQueryBuilder\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Method core\\database\\Model\:\:removeAttribute\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^PHPDoc tag @method for method core\\database\\Model\:\:paginate\(\) parameter \#1 \$perPage contains unknown class core\\database\\intb\.$#'
+			identifier: class.notFound
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Parameter \#1 \$object_or_class of function method_exists expects object\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Property core\\database\\Model\:\:\$attributes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Property core\\database\\Model\:\:\$attributesChanged type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: core/database/Model.php
+
+		-
+			message: '#^Parameter \#1 \$url of function parse_url expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/helpers/constants.php
+
+		-
+			message: '#^Cannot access offset string on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 3
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Cannot call method back\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Cannot call method to\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function auth\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function back\(\) should return core\\library\\Response but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function bind\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function configFile\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function flash\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function formatDate\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function redirect\(\) should return core\\library\\Response but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function resolve\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function response\(\) has parameter \$headers with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function session\(\) should return core\\library\\Session but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function timerExpired\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function truncate\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Function view\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Parameter \#1 \$datetime of class DateTime constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Parameter \#1 \$year of static method Carbon\\Carbon\:\:createFromDate\(\) expects int\|null, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/helpers/functions.php
+
+		-
+			message: '#^Method core\\interfaces\\MiddlewareInterface\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/interfaces/MiddlewareInterface.php
+
+		-
+			message: '#^Method core\\interfaces\\TemplateInterface\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/interfaces/TemplateInterface.php
+
+		-
+			message: '#^Method core\\interfaces\\TemplateInterface\:\:render\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/interfaces/TemplateInterface.php
+
+		-
+			message: '#^Class core\\library\\App has an uninitialized readonly property \$container\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Class core\\library\\App has an uninitialized readonly property \$session\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withDependencyInjectionContainer\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withEnvironmentVariables\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withErrorPage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withMiddlewares\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withMiddlewares\(\) has parameter \$middlewares with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withServiceContainer\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\App\:\:withTemplateEngine\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Readonly property core\\library\\App\:\:\$container is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Readonly property core\\library\\App\:\:\$session is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/App.php
+
+		-
+			message: '#^Static method core\\auth\\AuthManager\:\:create\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 2
+			path: core/library/App.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:__construct\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:all\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:each\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:has\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:implode\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:pluck\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Collection\:\:pop\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Collection.php
+
+		-
+			message: '#^Method core\\library\\Container\:\:bind\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Container.php
+
+		-
+			message: '#^Method core\\library\\Container\:\:resolve\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Container.php
+
+		-
+			message: '#^Property core\\library\\Container\:\:\$container type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Container.php
+
+		-
+			message: '#^Unsafe access to private property core\\library\\Container\:\:\$container through static\:\:\.$#'
+			identifier: staticClassAccess.privateProperty
+			count: 5
+			path: core/library/Container.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: core/library/Csrf.php
+
+		-
+			message: '#^Method core\\library\\Csrf\:\:check\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Csrf.php
+
+		-
+			message: '#^Method core\\library\\Csrf\:\:viewCsrfNotFound\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Csrf.php
+
+		-
+			message: '#^Parameter \#1 \$string of function trim expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Csrf.php
+
+		-
+			message: '#^Parameter \#2 \$user_string of function hash_equals expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Csrf.php
+
+		-
+			message: '#^Part \$this\-\>session\-\>get\(''csrf''\) \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: core/library/Csrf.php
+
+		-
+			message: '#^Method core\\library\\Flash\:\:get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Flash.php
+
+		-
+			message: '#^Method core\\library\\Flash\:\:set\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Flash.php
+
+		-
+			message: '#^Method core\\library\\Flash\:\:set\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Flash.php
+
+		-
+			message: '#^Part \$flash \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: core/library/Flash.php
+
+		-
+			message: '#^Binary operation "\." between ''Template '' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: core/library/Layout.php
+
+		-
+			message: '#^Cannot access constant class on mixed\.$#'
+			identifier: classConstant.nonObject
+			count: 1
+			path: core/library/Layout.php
+
+		-
+			message: '#^Method core\\library\\Layout\:\:render\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Layout.php
+
+		-
+			message: '#^Parameter \#1 \$class of function class_exists expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Layout.php
+
+		-
+			message: '#^Parameter \$content of function response expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Layout.php
+
+		-
+			message: '#^Call to an undefined method object\:\:handle\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Method core\\library\\Middleware\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Method core\\library\\Middleware\:\:handle\(\) has parameter \$middlewares with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Method core\\library\\Middleware\:\:isMiddleware\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Method core\\library\\Middleware\:\:isMiddleware\(\) has parameter \$middleware with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Parameter \#1 \$class of function class_exists expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Part \$middleware \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: core/library/Middleware.php
+
+		-
+			message: '#^Class core\\library\\Paginate has an uninitialized readonly property \$currentPage\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Class core\\library\\Paginate has an uninitialized readonly property \$offset\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Class core\\library\\Paginate has an uninitialized readonly property \$perPage\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Class core\\library\\Paginate has an uninitialized readonly property \$total\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Class core\\library\\Paginate has an uninitialized readonly property \$totalPages\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Method core\\library\\Paginate\:\:currentPage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Method core\\library\\Paginate\:\:links\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Method core\\library\\Paginate\:\:offset\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Method core\\library\\Paginate\:\:simpleLinks\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Method core\\library\\Paginate\:\:totalPages\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Property core\\library\\Paginate\:\:\$currentPage \(int\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Property core\\library\\Paginate\:\:\$totalPages \(int\) does not accept float\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Readonly property core\\library\\Paginate\:\:\$currentPage is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Readonly property core\\library\\Paginate\:\:\$offset is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Readonly property core\\library\\Paginate\:\:\$perPage is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Readonly property core\\library\\Paginate\:\:\$total is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Readonly property core\\library\\Paginate\:\:\$totalPages is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/Paginate.php
+
+		-
+			message: '#^Method core\\library\\Redirect\:\:back\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Redirect.php
+
+		-
+			message: '#^Method core\\library\\Redirect\:\:to\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Redirect.php
+
+		-
+			message: '#^Parameter \#1 \$to of method core\\library\\Redirect\:\:to\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: core/library/Redirect.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 4
+			path: core/library/Redirect.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Cannot access offset string on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:__construct\(\) has parameter \$cookies with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:__construct\(\) has parameter \$get with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:__construct\(\) has parameter \$headers with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:__construct\(\) has parameter \$post with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:__construct\(\) has parameter \$server with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:all\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:create\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:validate\(\) has parameter \$rules with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Method core\\library\\Request\:\:validate\(\) should return core\\library\\Validate but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Parameter \#1 \$string of function strip_tags expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: core/library/Request.php
+
+		-
+			message: '#^Parameter \#1 \$string of function strtolower expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: core/library/Request.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: core/library/Request.php
+
+		-
+			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:__construct\(\) has parameter \$headers with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:json\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:json\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:send\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:send\(\) has parameter \$return with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:with\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Method core\\library\\Response\:\:with\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Property core\\library\\Response\:\:\$content \(string\) does not accept string\|false\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/library/Response.php
+
+		-
+			message: '#^Cannot access offset ''middlewares'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Cannot access offset mixed on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Cannot access offset string on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Cannot use array destructuring on mixed\.$#'
+			identifier: offsetAccess.nonArray
+			count: 2
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:add\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:add\(\) has parameter \$route with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:execute\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:handleController\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:handleMiddleware\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:handleNotFound\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:handleResponse\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:handleUri\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:handleUri\(\) has parameter \$routes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:middleware\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Method core\\library\\Router\:\:middleware\(\) has parameter \$middlewares with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_key_last expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Parameter \#1 \$class of function class_exists expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Parameter \#1 \$routes of method core\\library\\Router\:\:handleUri\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Property core\\library\\Router\:\:\$action \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 2
+			path: core/library/Router.php
+
+		-
+			message: '#^Property core\\library\\Router\:\:\$controller \(string\|null\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 2
+			path: core/library/Router.php
+
+		-
+			message: '#^Property core\\library\\Router\:\:\$middlewares \(array\|string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 2
+			path: core/library/Router.php
+
+		-
+			message: '#^Property core\\library\\Router\:\:\$middlewares type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Property core\\library\\Router\:\:\$parameters type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Property core\\library\\Router\:\:\$routes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Router.php
+
+		-
+			message: '#^Cannot access offset string on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 4
+			path: core/library/Session.php
+
+		-
+			message: '#^Method core\\library\\Session\:\:all\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Session.php
+
+		-
+			message: '#^Method core\\library\\Session\:\:previousUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Session.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between '''' and ''/favicon\.ico'' will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: core/library/Session.php
+
+		-
+			message: '#^Class core\\library\\Validate has an uninitialized readonly property \$data\. Assign it in the constructor\.$#'
+			identifier: property.uninitializedReadonly
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Method core\\library\\Validate\:\:errors\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Method core\\library\\Validate\:\:validate\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Method core\\library\\Validate\:\:validate\(\) has parameter \$rules with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Parameter \#2 \$string of function explode expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Property core\\library\\Validate\:\:\$data type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Property core\\library\\Validate\:\:\$errors type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Readonly property core\\library\\Validate\:\:\$data is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: core/library/Validate.php
+
+		-
+			message: '#^Class core\\mail\\Mail has PHPDoc tag @method for method parseHtml\(\) parameter \#2 \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/mail/Mail.php
+
+		-
+			message: '#^Class core\\mail\\Mail has PHPDoc tag @method for method send\(\) parameter \#2 \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/mail/Mail.php
+
+		-
+			message: '#^Method core\\mail\\Mail\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/mail/Mail.php
+
+		-
+			message: '#^Method core\\mail\\Mail\:\:__callStatic\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/mail/Mail.php
+
+		-
+			message: '#^Method core\\mail\\Mailer\:\:parseHtml\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Method core\\mail\\Mailer\:\:send\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Parameter \#2 \$replace of function str_replace expects array\<string\>\|string, list given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function str_replace expects array\<string\>\|string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Property PHPMailer\\PHPMailer\\PHPMailer\:\:\$Host \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Property PHPMailer\\PHPMailer\\PHPMailer\:\:\$Password \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Property PHPMailer\\PHPMailer\\PHPMailer\:\:\$Port \(int\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Property PHPMailer\\PHPMailer\\PHPMailer\:\:\$Username \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: core/mail/Mailer.php
+
+		-
+			message: '#^Method core\\middlewares\\GlobalMiddleware\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/middlewares/GlobalMiddleware.php
+
+		-
+			message: '#^Cannot call method layout\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/resources/views/plates/errors/404.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: core/resources/views/plates/errors/404.php
+
+		-
+			message: '#^Variable \$title might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: core/resources/views/plates/errors/404.php
+
+		-
+			message: '#^Cannot call method e\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/resources/views/plates/layout.php
+
+		-
+			message: '#^Cannot call method section\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/resources/views/plates/layout.php
+
+		-
+			message: '#^Parameter \#1 \(mixed\) of echo cannot be converted to string\.$#'
+			identifier: echo.nonString
+			count: 2
+			path: core/resources/views/plates/layout.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: core/resources/views/plates/layout.php
+
+		-
+			message: '#^Variable \$title might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: core/resources/views/plates/layout.php
+
+		-
+			message: '#^Cannot call method getCompiled\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/resources/views/smarty/compile/c33fce175ade159583e0100539e891b2ac180ce7_0.file_404.tpl.php
+
+		-
+			message: '#^Cannot call method isFresh\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: core/resources/views/smarty/compile/c33fce175ade159583e0100539e891b2ac180ce7_0.file_404.tpl.php
+
+		-
+			message: '#^Function content_669554f782e672_31417073\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/resources/views/smarty/compile/c33fce175ade159583e0100539e891b2ac180ce7_0.file_404.tpl.php
+
+		-
+			message: '#^Variable \$_smarty_tpl might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: core/resources/views/smarty/compile/c33fce175ade159583e0100539e891b2ac180ce7_0.file_404.tpl.php
+
+		-
+			message: '#^Method __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:doDisplay\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Method __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:doDisplay\(\) has parameter \$blocks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Method __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:doDisplay\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Method __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:getDebugInfo\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Property __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:\$macros has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Property __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:\$source has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Property __TwigTemplate_e7e6e539859e7e96777fe95bf343f3ad\:\:\$source is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: core/resources/views/twig/cache/96/96af347b759ecdf800e59087eb386aec.php
+
+		-
+			message: '#^Parameter \#1 \$haystack of function strrchr expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/rules/Domain.php
+
+		-
+			message: '#^Parameter \#1 \$string of function substr expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/rules/Domain.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of function in_array expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/rules/Domain.php
+
+		-
+			message: '#^Property core\\rules\\Domain\:\:\$blackDomains has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: core/rules/Domain.php
+
+		-
+			message: '#^Parameter \#1 \$string of function strlen expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/rules/Max.php
+
+		-
+			message: '#^Binary operation "\-" between string and 1 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: core/rules/RepeatedLetters.php
+
+		-
+			message: '#^Parameter \#2 \$subject of function preg_match expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/rules/RepeatedLetters.php
+
+		-
+			message: '#^Parameter \#2 \$times of function str_repeat expects int, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: core/rules/RepeatedLetters.php
+
+		-
+			message: '#^Method core\\templates\\Latte\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/templates/Latte.php
+
+		-
+			message: '#^Method core\\templates\\Latte\:\:render\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/templates/Latte.php
+
+		-
+			message: '#^Method core\\templates\\Plates\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/templates/Plates.php
+
+		-
+			message: '#^Method core\\templates\\Plates\:\:render\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/templates/Plates.php
+
+		-
+			message: '#^Method core\\templates\\Smarty\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/templates/Smarty.php
+
+		-
+			message: '#^Method core\\templates\\Smarty\:\:render\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/templates/Smarty.php
+
+		-
+			message: '#^Method core\\templates\\Twig\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: core/templates/Twig.php
+
+		-
+			message: '#^Method core\\templates\\Twig\:\:render\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: core/templates/Twig.php
